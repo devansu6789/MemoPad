@@ -11,7 +11,7 @@ const NavBar = () => {
   return (
     <div
       className={cn(
-        "z-50 bg-background flex items-center w-full p-6 fixed top-0",
+        "z-50 bg-background flex items-center w-full p-6 fixed top-0 dark:bg-[#2D2424]",
         scrolled && "border-b shadow-sm"
       )}
     >
