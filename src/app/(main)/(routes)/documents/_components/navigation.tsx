@@ -1,8 +1,9 @@
 import { cn } from "@/lib/utils";
 import { ChevronLeft, MenuIcon } from "lucide-react";
 import { usePathname } from "next/navigation";
-import React, { ElementRef, useRef, useState } from "react";
+import React, { ElementRef, useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "usehooks-ts";
+import UserItem from "./user-item";
 
 const Navigation = () => {
   const pathName = usePathname();
@@ -74,7 +75,17 @@ const Navigation = () => {
     }
   };
 
-  const handleOnClick = () => {};
+  useEffect(() => {
+    if (isMobile) {
+      collapse();
+    } else resetWidth();
+  }, [isMobile]);
+
+  useEffect(() => {
+    if (isMobile) {
+      collapse();
+    }
+  }, [pathName, isMobile]);
 
   return (
     <>
@@ -97,7 +108,7 @@ const Navigation = () => {
           <ChevronLeft className="h-6 w-6" />
         </div>
         <div>
-          <p>Action items</p>
+          <UserItem />
         </div>
         <div className="mt-4">
           <p>Documents</p>
