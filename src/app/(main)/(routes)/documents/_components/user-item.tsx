@@ -43,10 +43,6 @@ const UserItem = () => {
         forceMount
       >
         <div className="flex flex-col space-y-4 p-2">
-          <p className="text-xs font-medium leading-none text-muted-foreground">
-            {/*TODO : user email to be fetched from logged in user's details */}
-            test@testmail.com
-          </p>
           <div className="flex items-center gap-x-2">
             <div className="rounded-md bg-secondary p-1">
               {/* TODO : below image should be an avatar of user profil to be fetched from userdetails */}
@@ -62,16 +58,17 @@ const UserItem = () => {
               <p className="text-sm font-medium line-clamp-1">
                 Antonio&apos;s MemoPad
               </p>
+              <p className="text-xs font-medium leading-none text-muted-foreground m-auto">
+                {/*TODO : user email to be fetched from logged in user's details */}
+                test@testmail.com
+              </p>
             </div>
           </div>
         </div>
         <DropdownMenuSeparator />
-        <DropdownMenuItem
-          asChild
-          className="w-full cursor-pointer text-muted-foreground"
-        >
+        <DropdownMenuItem asChild className="w-full cursor-pointer text-muted ">
           {/* TODO LogOut should be linked to user profile */}
-          <Button variant="ghost">LogOut</Button>
+          <Button>Log Out</Button>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
